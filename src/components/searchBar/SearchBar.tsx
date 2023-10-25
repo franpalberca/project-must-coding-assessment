@@ -1,14 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { searchActions } from '../../actions/searchActions/searchActions';
 
+import { combineReducers } from 'redux';
+import { searchReducer } from './search/searchReducer';
+
+export const rootReducer = combineReducers({
+    search: searchReducer,
+});
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 export const SearchBar = () => {
     const dispatch = useDispatch();
-    const searchTerm = useSelector((state) => state.searchTerm); // Usa useSelector para obtener el valor de searchTerm del store
+    const searchTerm = useSelector((state: RootState) => state.search.searchTerm); // Use RootState to get the value of searchTerm from the store
 
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newSearchTerm = event.target.value;
-        dispatch(searchActions.setSearchTerm(newSearchTerm)); // Usa searchActions para dispatch la acción
+        dispatch(setSearchTerm(newSearchTerm)); // Dispatch the setSearchTerm action
     };
 
     return (

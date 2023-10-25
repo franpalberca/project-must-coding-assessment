@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import {Navbar} from '../components/navbar/Navbar';
 import {SearchBar} from '../components/searchBar/SearchBar';
 import { UserContext } from '../context/UserContext';
+import UserComponent from '../components/userComponent/UserComponent';
 
 const UserPage = () => {
 	const userContext = useContext(UserContext);
@@ -11,6 +12,7 @@ const UserPage = () => {
 	return (
 		<>
 			<Navbar />
+            <UserComponent />
 			{/* <SearchBar /> */}
 		</>
 	);

@@ -14,7 +14,7 @@ const LandingPage: React.FC<LandingPageProps> = ({onFormSubmit}) => {
 		e.preventDefault();
         userContext.setUsername(userName); //Here we set the username in the context
 		onFormSubmit(userName);
-		navigate('/user');
+		navigate(`/${userName}`);
 	};
 
 	return (

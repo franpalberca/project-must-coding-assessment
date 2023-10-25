@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { LOADING, NOTFOUND, USER } from '../config/routes/paths';
+import { NOTFOUND, USER } from '../config/routes/paths';
 
 export const RouterApp = () => {
     const LazyLandingPage = lazy(() => import('../pages/LandingPage'));
@@ -14,7 +14,7 @@ export const RouterApp = () => {
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path={LOADING} element={<Suspense fallback={<div>Loading...</div>}><LazyLandingPage onFormSubmit={handleFormSubmit}/></Suspense>} />
+                    <Route index element={<Suspense fallback={<div>Loading...</div>}><LazyLandingPage onFormSubmit={handleFormSubmit}/></Suspense>} />
                     <Route path={USER} element={<Suspense fallback={<div>Loading...</div>}><LazyUserPage /></Suspense>} />
                     <Route path={NOTFOUND} element={<Suspense fallback={<div>Loading...</div>}><LazyNotFoundPage /></Suspense>} />
                 </Routes>

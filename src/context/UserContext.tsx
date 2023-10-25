@@ -10,7 +10,11 @@ export const UserContext = createContext<UserContextType>({
     setUsername: () => {},
 });
 
-export const UserProvider: React.FC = ({ children }) => {
+type UserProviderProps = {
+    children: React.ReactNode;
+};
+
+export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     const [username, setUsername] = useState('');
 
     return (

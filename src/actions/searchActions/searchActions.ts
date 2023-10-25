@@ -17,3 +17,10 @@ export const searchActions = (query: string) => ({
 		type: 'CLEAR_SEARCH_QUERY',
 	}),
 });
+
+export const setSearchTerm = (term: string) => {
+    return {
+        type: 'SET_SEARCH_TERM',
+        payload: term
+    };
+};
