@@ -1,16 +1,14 @@
-import { Navbar } from "./components/navbar/Navbar"
-
-
+import {UserProvider} from './context/UserContext';
+import {RouterApp} from './routes/Routes';
 
 function App() {
-
-
-  return (
-    <>
-    <Navbar />
-      <h1>App</h1>
-    </>
-  )
+	return (
+		<>
+			<UserProvider>
+				<RouterApp />
+			</UserProvider>
+		</>
+	);
 }
 
-export default App
+export default App;
