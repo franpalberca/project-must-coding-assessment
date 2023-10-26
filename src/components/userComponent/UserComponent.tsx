@@ -112,7 +112,15 @@ const UserComponentStyles = styled.div`
 	@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 		grid-template-columns: 90vh;
 		grid-gap: 2rem;
-	  }
+	}
+	@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
+		grid-gap: 2rem;
+	}
+	@media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+		grid-template-columns: 1fr 2fr;
+		grid-gap: 2rem;
+		margin-left: -5rem;
+	}
 	& .user__info {
 		display: flex;
 		flex-direction: column;
@@ -128,7 +136,14 @@ const UserComponentStyles = styled.div`
 			grid-column-gap: 0px;
 			grid-row-gap: 0px;
 			margin-left: 2rem;
-		  }
+		}
+		@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
+			display: grid;
+			grid-template-rows: 1fr 2fr;
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+			margin-left: 2rem;
+		}
 		&__pic {
 			width: 15rem;
 			height: 15rem;
@@ -138,6 +153,11 @@ const UserComponentStyles = styled.div`
 				grid-area: 1 / 1 / 2 / 2;
 				width: 5rem;
 				height: 5rem;
+			}
+			@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
+				grid-area: 1 / 1 / 2 / 2;
+				width: 8rem;
+				height: 8rem;
 			}
 		}
 		&__global {
@@ -151,10 +171,16 @@ const UserComponentStyles = styled.div`
 			@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 				grid-area: 1 / 2 / 2 / 3;
 				max-width: 30vh;
-				max-height: 20vh;
+				max-height: 25vh;
 				gap: 0;
 				margin-left: 0;
-
+			}
+			@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
+				width: 45vh;
+				max-width: 40vh;
+				max-height: 30vh;
+				gap: 0;
+				margin-left: 2vh;
 			}
 			&__username {
 				font-size: 2rem;

@@ -31,15 +31,21 @@ const CardStyles = styled.div`
 		background-color: #fff57e;
 		border: 2px solid #218bff;
 		border-radius: 0.5rem;
-        height: 20vh;
+        height: 25vh;
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 		margin-right: 5rem;
-		@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
+		@media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
 			margin-right: 3rem;
-			max-width: 40vh;
+			width: 50vh;
 			height: 10vh;
 			gap: 0;
 		}
+        @media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+            margin-right: 3rem;
+            width: 95vh;
+            height: 10vh;
+            gap: 0;
+        }
 
 		&__title {
             display: flex;
@@ -49,11 +55,16 @@ const CardStyles = styled.div`
 			font-weight: 600;
             margin-top: 1rem;
             margin-bottom: 0.2rem;
-			@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
+			@media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
 				font-size: 1rem;
 				font-weight: 400;
                 margin-top: 0;
 			}
+            @media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-top: 0;
+            }
 		}
         &__url {
             display: flex;
@@ -63,8 +74,12 @@ const CardStyles = styled.div`
             font-weight: 400;
             margin-top: 0;
             margin-bottom: 5rem;
-            @media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
+            @media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
                 font-size: 0.8rem;
+                font-weight: 100;
+            }
+            @media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+                font-size: 1rem;
                 font-weight: 100;
             }
 		}

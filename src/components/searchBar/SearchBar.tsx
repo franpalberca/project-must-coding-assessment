@@ -28,8 +28,11 @@ const SearchBarStyles = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
+@media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
     max-width: 40vh;
+}
+@media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+    max-width: 60vh;
 }
     .input__filter {
         border: 1px solid #218bff;
@@ -39,8 +42,11 @@ align-items: center;
         font-weight: 400;
         width: 60vh;
         height: 3vh;
-        @media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
+        @media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
             width: 40vh;
+        }
+        @media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+            width: 60vh;
         }
     }`
 
