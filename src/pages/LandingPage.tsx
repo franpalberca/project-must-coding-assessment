@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import {FiGithub} from 'react-icons/fi';
+import { breakpoints } from '../styles/breakpoints';
 
 interface LandingPageProps {
 	onFormSubmit: (userName: string) => void; // Specifies type on onFormSubmit prop
@@ -96,8 +97,8 @@ const LandingPageStyles = styled.div`
 			}
 		}
 	}
-	/* Specific styles for screens with a maximum wide of 768px */
-	@media (max-width: 768px) {
+	// Media Queries
+	@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 		justify-content: space-around;
 		& .landing__title {
 

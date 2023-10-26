@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Repository } from '../userComponent/UserComponent';
-import styled from 'styled-components';
 import Card from '../card/Card';
 
 interface Props {
@@ -18,7 +17,6 @@ const UserRepositories = (props: Props) => {
             const search = props.filter.toLowerCase();
             return (
                 repo.name.toLowerCase().includes(search) ||
-                repo?.description?.toLowerCase().includes(search) ||
                 repo.url.toLowerCase().includes(search)
             );
         });
@@ -27,25 +25,17 @@ const UserRepositories = (props: Props) => {
     }, [props.filter, props.repositories]);
 
     return (
-        <UserRepositoriesStyles>
+        <>
             {filteredRepositories.map((repo) => (
                 <Card key={repo.id}
                 name={repo.name}
-                description={repo.description || ""}
                 url={repo.url} />
             ))}
-        </UserRepositoriesStyles>
+        </>
     );
 };
 
-const UserRepositoriesStyles = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-    overflow-y: scroll;
-    max-height: 100vh;
-`
+
 export default UserRepositories;
 
 
