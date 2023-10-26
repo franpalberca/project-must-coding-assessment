@@ -1,10 +1,10 @@
-import {useContext, useState, useEffect} from 'react';
-import {UserContext} from '../../context/UserContext';
+import {useState, useEffect} from 'react';
 import fetchData from '../../api/fetchData';
 import {FiGithub} from 'react-icons/fi';
 import styled from 'styled-components';
 import UserRepositories from '../userRepositories/UserRepositories';
 import SearchBar from '../searchBar/SearchBar';
+import { useLocation } from 'react-router-dom';
 
 interface User {
 	login: string;
@@ -30,10 +30,10 @@ export interface Repository {
 }
 
 const UserComponent = () => {
-	const userContext = useContext(UserContext);
-	const username = userContext.username;
 	const [userData, setUserData] = useState<User | null>(null);
 	const [filteredRepo, setFilteredRepo] = useState<string>('');
+	const location = useLocation();
+	const username = location.pathname.substring(1); //This way we get the username from the url
 	const query = `query {
         user(login: "${username}") {
             login
