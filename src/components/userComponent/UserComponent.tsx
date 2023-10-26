@@ -186,10 +186,10 @@ const UserComponentStyles = styled.div`
 			background-color: #fff57e;
 			@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 				grid-area: 1 / 2 / 2 / 3;
-				max-width: 30vh;
+				width: 25vh;
 				max-height: 25vh;
 				gap: 0;
-				margin-left: 0;
+				margin-left: -4vh;
 			}
 			@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
 				width: 45vh;
@@ -270,6 +270,9 @@ const UserComponentStyles = styled.div`
 			&__map {
 				overflow-y: auto;
 			}
+			@media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
+				margin-left: 1vh;
+				}
 		}
 	}
 .loading-spinner {

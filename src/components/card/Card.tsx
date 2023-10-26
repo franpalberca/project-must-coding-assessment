@@ -36,7 +36,7 @@ const CardStyles = styled.div`
 		margin-right: 5rem;
 		@media (${breakpoints.min}px <= width <= ${breakpoints.tabletMax}px) {
 			margin-right: 3rem;
-			width: 50vh;
+			width: 40vh;
 			height: 10vh;
 			gap: 0;
 		}
@@ -45,6 +45,9 @@ const CardStyles = styled.div`
             width: 95vh;
             height: 10vh;
             gap: 0;
+        }
+        @media (${breakpoints.laptopMax}px <= width <= ${breakpoints.bigScreenMax}px) {
+			height: 11vh;
         }
 
 		&__title {
