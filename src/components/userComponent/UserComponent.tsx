@@ -74,6 +74,7 @@ const UserComponent = () => {
 		<UserComponentStyles>
 			<div className="user__info">
 				<img src={userData?.avatarUrl} alt="User Logo" className="user__info__pic" />
+				<div>
 				<p className="user__info__username">{userData?.login}</p>
 				<p className="user__info__name">{userData?.name}</p>
 
@@ -91,6 +92,7 @@ const UserComponent = () => {
 					<span>Github Profile</span> <FiGithub />
 				</a>
 			</div>
+			</div>
             <div className="">
             <SearchBar filter={filteredRepo} setFilter={setFilteredRepo} />
                 {userData?.repositories.nodes.map((repository) => (
@@ -106,7 +108,6 @@ const UserComponentStyles = styled.div`
 	grid-template-columns: 1fr 3fr;
 	grid-gap: 10rem;
 	padding-top: 1rem;
-	background-color: #f6f8fa;
 	& .user__info {
 		display: flex;
 		flex-direction: column;
