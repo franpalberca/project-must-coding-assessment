@@ -4,6 +4,7 @@ import fetchData from '../../api/fetchData';
 import {FiGithub} from 'react-icons/fi';
 import styled from 'styled-components';
 import UserRepositories from '../userRepositories/UserRepositories';
+import SearchBar from '../searchBar/SearchBar';
 
 interface User {
 	login: string;
@@ -72,28 +73,30 @@ const UserComponent = () => {
 	return (
 		<UserComponentStyles>
 			<div className="user__info">
-					<img src={userData?.avatarUrl} alt="User Logo" className="user__info__pic" />
-					<p className="user__info__username">{userData?.login}</p>
-					<p className="user__info__name">{userData?.name}</p>
+				<img src={userData?.avatarUrl} alt="User Logo" className="user__info__pic" />
+				<p className="user__info__username">{userData?.login}</p>
+				<p className="user__info__name">{userData?.name}</p>
 
-					<div className="user__info__social">
-						<p className="user__info__social__followers">
-							{userData?.followers.totalCount}
-							<span className="user__info__social__followers__span"> Followers</span>
-						</p>
-						<p className="user__info__social__following">
-							{userData?.following.totalCount}
-							<span className="user__info__social__following__span"> Following</span>
-						</p>
-					</div>
-					<a href={userData?.url} target="_blank" className="user__info__github">
-						<span>Github Profile</span> <FiGithub />
-					</a>
+				<div className="user__info__social">
+					<p className="user__info__social__followers">
+						{userData?.followers.totalCount}
+						<span className="user__info__social__followers__span"> Followers</span>
+					</p>
+					<p className="user__info__social__following">
+						{userData?.following.totalCount}
+						<span className="user__info__social__following__span"> Following</span>
+					</p>
 				</div>
-			<div className="">
-					{/* <SearchBar setFilter={setFilteredRepo} /> */}
-					<UserRepositories filter={filteredRepo} repositories={userData?.repositories.nodes}/>
-				</div>
+				<a href={userData?.url} target="_blank" className="user__info__github">
+					<span>Github Profile</span> <FiGithub />
+				</a>
+			</div>
+            <div className="">
+            <SearchBar filter={filteredRepo} setFilter={setFilteredRepo} />
+                {userData?.repositories.nodes.map((repository) => (
+                    <UserRepositories key={repository.id} filter={filteredRepo} repositories={[repository]} /> //This way we make sure we pass repositories as an array
+                ))}
+                </div>
 		</UserComponentStyles>
 	);
 };
@@ -103,15 +106,15 @@ const UserComponentStyles = styled.div`
 	grid-template-columns: 1fr 3fr;
 	grid-gap: 10rem;
 	padding-top: 1rem;
-    background-color: #f6f8fa;
+	background-color: #f6f8fa;
 	& .user__info {
-        display: flex;
+		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-        margin-top: 1vh;
-        margin-left: 10rem;
-        position: block;
+		margin-top: 1vh;
+		margin-left: 10rem;
+		position: block;
 		&__pic {
 			width: 15rem;
 			height: 15rem;
@@ -120,28 +123,28 @@ const UserComponentStyles = styled.div`
 		&__username {
 			font-size: 2rem;
 			font-weight: 600;
-            margin-top: 0.5vh;
-            margin-bottom: 1vh;
+			margin-top: 0.5vh;
+			margin-bottom: 1vh;
 		}
 		&__name {
 			font-size: 1.5rem;
 			font-weight: 400;
-            margin-top: 1vh;
-            margin-bottom: 0.5vh;
+			margin-top: 1vh;
+			margin-bottom: 0.5vh;
 		}
 		&__social {
 			display: flex;
 			gap: 1rem;
-            margin-top: 1vh;
-            margin-bottom: 1vh;
+			margin-top: 1vh;
+			margin-bottom: 1vh;
 			&__followers,
 			&__following {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				gap: 0.5rem;
-                margin-top: 1vh;
-                margin-bottom: 1vh;
+				margin-top: 1vh;
+				margin-bottom: 1vh;
 				&__span {
 					font-size: 0.8rem;
 					font-weight: 400;

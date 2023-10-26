@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Repository } from '../userComponent/UserComponent';
 import styled from 'styled-components';
+import Card from '../card/Card';
 
 interface Props {
     filter: string;
@@ -28,11 +29,10 @@ const UserRepositories = (props: Props) => {
     return (
         <UserRepositoriesStyles>
             {filteredRepositories.map((repo) => (
-                <div key={repo.name}>
-                    <h3>{repo.name}</h3>
-                    <p>{repo.description}</p>
-                    <a href={repo.url} target='_blank'>{repo.url}</a>
-                </div>
+                <Card key={repo.id}
+                name={repo.name}
+                description={repo.description || ""}
+                url={repo.url} />
             ))}
         </UserRepositoriesStyles>
     );
@@ -45,14 +45,6 @@ const UserRepositoriesStyles = styled.div`
     margin-top: 2rem;
     overflow-y: scroll;
     max-height: 100vh;
-    & h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        }
-        & p {
-            font-size: 1rem;
-            font-weight: 400;
-            }
 `
 export default UserRepositories;
 
