@@ -1,6 +1,5 @@
 import { useContext } from 'react';
-import {Navbar} from '../components/navbar/Navbar';
-import {SearchBar} from '../components/searchBar/SearchBar';
+import Navbar from '../components/navbar/Navbar';
 import { UserContext } from '../context/UserContext';
 import UserComponent from '../components/userComponent/UserComponent';
 
@@ -13,7 +12,6 @@ const UserPage = () => {
 		<>
 			<Navbar />
             <UserComponent />
-			{/* <SearchBar /> */}
 		</>
 	);
 };

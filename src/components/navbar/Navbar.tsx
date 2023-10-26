@@ -3,7 +3,7 @@ import {GiBookmark} from 'react-icons/gi';
 import {LuTable2} from 'react-icons/lu';
 import styled from 'styled-components';
 
-export const Navbar = () => {
+const Navbar = () => {
 	return (
 		<NavbarStyles>
 			<div className='buttons'>
@@ -45,3 +45,5 @@ const NavbarStyles = styled.div`
     }
     }
 `;
+
+export default Navbar;
