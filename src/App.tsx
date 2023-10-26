@@ -1,4 +1,4 @@
-import {RouterApp} from './routes/Routes';
+import {RouterApp} from './routes/Page.routes';
 import styled from 'styled-components'
 
 function App() {

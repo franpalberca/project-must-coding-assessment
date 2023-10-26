@@ -6,6 +6,7 @@ import UserRepositories from '../userRepositories/UserRepositories';
 import SearchBar from '../searchBar/SearchBar';
 import {useLocation} from 'react-router-dom';
 import { breakpoints } from '../../styles/breakpoints';
+import error404 from '../../assets/error-404.jpg';
 
 interface User {
 	login: string;
@@ -32,6 +33,7 @@ export interface Repository {
 const UserComponent = () => {
 	const [userData, setUserData] = useState<User | null>(null);
 	const [filteredRepo, setFilteredRepo] = useState<string>('');
+	const [loading, setLoading] = useState<boolean>(false);
 	const location = useLocation();
 	const username = location.pathname.substring(1); //This way we get the username from the url
 	const query = `query {
@@ -69,9 +71,21 @@ const UserComponent = () => {
 		fetchDataUser();
 	}, [query]);
 
+	useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    }, [])
+
 	return (
 		<UserComponentStyles>
-			<div className="user__info">
+			{loading ? (
+			<div className="loading-spinner"></div>) : userData === null ? (
+			<img src={error404} alt="Error 404" />
+			 ) : (
+				<>
+				<div className="user__info">
 				<img src={userData?.avatarUrl} alt="User Logo" className="user__info__pic" />
 				<div className="user__info__global">
 					<p className="user__info__global__username">{userData?.login}</p>
@@ -100,6 +114,8 @@ const UserComponent = () => {
 				))}
 				</div>
 			</div>
+			</>
+)}
 		</UserComponentStyles>
 	);
 };
@@ -107,7 +123,7 @@ const UserComponent = () => {
 const UserComponentStyles = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 3fr;
-	grid-gap: 10rem;
+	grid-gap: 7rem;
 	padding-top: 1rem;
 	@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 		grid-template-columns: 90vh;
@@ -255,6 +271,19 @@ const UserComponentStyles = styled.div`
 				overflow-y: auto;
 			}
 		}
+	}
+.loading-spinner {
+			border: 8px solid #f3f3f3;
+			border-top: 8px solid #3498db;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			animation: spin 2s linear infinite;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 9999;
 	}
 `;
 export default UserComponent;
