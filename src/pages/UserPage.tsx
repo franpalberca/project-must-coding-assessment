@@ -1,4 +1,5 @@
-import UserComponent from '../components/userComponent/UserComponent';
+import { UserComponent } from "../components";
+
 
 const UserPage = () => {
 

@@ -2,8 +2,7 @@ import {useState, useEffect} from 'react';
 import fetchData from '../../api/fetchData';
 import {FiGithub} from 'react-icons/fi';
 import styled from 'styled-components';
-import UserRepositories from '../userRepositories/UserRepositories';
-import SearchBar from '../searchBar/SearchBar';
+import { SearchBar, UserRepositories } from '..';
 import {useLocation} from 'react-router-dom';
 import {breakpoints} from '../../styles/breakpoints';
 import error404 from '../../assets/error-404.jpg';
@@ -63,7 +62,6 @@ const UserComponent = () => {
 			try {
 				const data = await fetchData(query);
 				setUserData(data?.data?.user);
-				console.log(data);
 			} catch (error) {
 				console.error('Error fetching user data:', error);
 			}

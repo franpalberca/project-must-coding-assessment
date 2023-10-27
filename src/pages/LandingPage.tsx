@@ -4,16 +4,11 @@ import styled from 'styled-components';
 import {FiGithub} from 'react-icons/fi';
 import {breakpoints} from '../styles/breakpoints';
 
-interface LandingPageProps {
-	onFormSubmit: (userName: string) => void; // Specifies type on onFormSubmit prop
-}
-
-const LandingPage: React.FC<LandingPageProps> = ({onFormSubmit}) => {
+const LandingPage = () => {
 	const navigate = useNavigate();
 	const [userName, setUserName] = useState('');
 	const handleFormSubmit = (e: {preventDefault: () => void}) => {
 		e.preventDefault();
-		onFormSubmit(userName);
 		navigate(`/${userName}`);
 	};
 
