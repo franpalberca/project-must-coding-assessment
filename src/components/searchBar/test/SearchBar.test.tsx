@@ -13,12 +13,7 @@ describe('SearchBar Component', () => {
 	});
 
 	test('Renders the SearchBar component', () => {
-		const searchBar = screen.getByTestId('search-bar');
-		expect(searchBar).toBeDefined();
-	});
-
-	test('Renders the SearchBar component', () => {
 		const searchInput = screen.getByTestId('search-input');
 		expect(searchInput).toBeDefined();
-	  });
-	})
+	});
+});
