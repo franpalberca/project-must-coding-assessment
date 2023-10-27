@@ -12,6 +12,7 @@ A simple web application built with Vite, React, and TypeScript to search for Gi
 - [Folder Structure](#folder-structure)
 - [Testing](#testing)
 - [Storybook](#storybook)
+- [Future Implementation](#future-implementing)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -109,9 +110,13 @@ npm run test
 Storybook is integrated to visualize and interact with components in isolation. Run the following command to start Storybook:
 npm run storybook
 
+## Future Implementation
+The next natural step for this project is to implement the option to view repositories within the app itself. Also to be able to see the projects of each user. Finally, a future implementation would also be the option to create, modify and delete repositories.
+In short, the GraphQl query needs to be augmented to bring more information, perform CRUD and be able to add more extras.
+
 ## Contributing
 Contributions are welcome! Feel free to open issues or pull requests.
 
 ## License
-This project is free of license and it's use is purely academical.
+This project is free of license and its use is purely academical.
 
