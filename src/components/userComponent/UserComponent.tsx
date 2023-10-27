@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import fetchData from '../../api/fetchData';
 import {FiGithub} from 'react-icons/fi';
 import styled from 'styled-components';
-import { SearchBar, UserRepositories } from '..';
+import {SearchBar, UserRepositories} from '..';
 import {useLocation} from 'react-router-dom';
 import {breakpoints} from '../../styles/breakpoints';
 import error404 from '../../assets/error-404.jpg';
@@ -28,6 +28,11 @@ export interface Repository {
 	name: string;
 	url: string;
 }
+
+/**
+ * Represents a UserComponent displaying user information and repositories.
+ * @component
+ */
 
 const UserComponent = () => {
 	const [userData, setUserData] = useState<User | null>(null);
@@ -57,6 +62,10 @@ const UserComponent = () => {
         }
     }`;
 
+	/**
+	 * Fetch user data based on the username and populate the `userData` state.
+	 */
+
 	useEffect(() => {
 		const fetchDataUser = async () => {
 			try {
@@ -69,12 +78,39 @@ const UserComponent = () => {
 		fetchDataUser();
 	}, [query]);
 
+	/**
+	 * Simulate loading for 3 seconds.
+	 */
+
 	useEffect(() => {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
 		}, 3000);
 	}, []);
+
+	/**
+	 * Represents user information.
+	 * @typedef {Object} User
+	 * @property {string} login - The user's login name.
+	 * @property {string} name - The user's name.
+	 * @property {string} avatarUrl - The URL of the user's avatar.
+	 * @property {string} url - The URL of the user's GitHub profile.
+	 * @property {Object} followers - The user's followers information.
+	 * @property {number} followers.totalCount - The total number of followers.
+	 * @property {Object} following - The user's following information.
+	 * @property {number} following.totalCount - The total number of users the user is following.
+	 * @property {Object} repositories - The user's repositories.
+	 * @property {Array<Repository>} repositories.nodes - An array of user repositories.
+	 */
+
+	/**
+	 * Represents a user repository.
+	 * @typedef {Object} Repository
+	 * @property {string} id - The repository's ID.
+	 * @property {string} name - The repository's name.
+	 * @property {string} url - The repository's URL.
+	 */
 
 	return (
 		<UserComponentStyles>
@@ -119,6 +155,10 @@ const UserComponent = () => {
 	);
 };
 
+/**
+ * Styles for the UserComponent component.
+ */
+
 const UserComponentStyles = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 3fr;
@@ -154,13 +194,13 @@ const UserComponentStyles = styled.div`
 			margin-left: 1rem;
 		}
 		@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
-			display:flex;
+			display: flex;
 			flex-direction: column;
 			justify-content: space-evenly;
 			margin-left: 2rem;
 		}
 		@media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
-			display:flex;
+			display: flex;
 			flex-direction: column;
 			justify-content: space-evenly;
 			margin-left: 6rem;

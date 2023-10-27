@@ -4,9 +4,19 @@ import styled from 'styled-components';
 import {FiGithub} from 'react-icons/fi';
 import {breakpoints} from '../styles/breakpoints';
 
+/**
+ * LandingPage component for the home page.
+ */
+
 const LandingPage = () => {
 	const navigate = useNavigate();
 	const [userName, setUserName] = useState('');
+
+	/**
+	 * Handles the form submission.
+	 * @param {Object} e - Event object with a preventDefault function.
+	 */
+
 	const handleFormSubmit = (e: {preventDefault: () => void}) => {
 		e.preventDefault();
 		navigate(`/${userName}`);
@@ -29,6 +39,10 @@ const LandingPage = () => {
 		</LandingPageStyles>
 	);
 };
+
+/**
+ * Styles for the LandingPage component.
+ */
 
 const LandingPageStyles = styled.div`
 	display: flex;

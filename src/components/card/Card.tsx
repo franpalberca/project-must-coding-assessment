@@ -5,6 +5,13 @@ type Props = {
 	name: string;
 	url: string;
 };
+/**
+ * Represents a Card component.
+ * @component
+ * @param {Object} props - The properties of the Card component.
+ * @param {string} props.name - The name to display on the card.
+ * @param {string} props.url - The URL to display on the card.
+ */
 
 const Card = (props: Props) => {
 	const {name, url} = props;
@@ -19,6 +26,10 @@ const Card = (props: Props) => {
 		</CardStyles>
 	);
 };
+
+/**
+ * Styles for the Card component.
+ */
 
 const CardStyles = styled.div`
 	display: flex;
