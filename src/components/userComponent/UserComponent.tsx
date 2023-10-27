@@ -126,6 +126,7 @@ const UserComponentStyles = styled.div`
 	grid-template-columns: 1fr 3fr;
 	grid-gap: 7rem;
 	padding-top: 1rem;
+	height: 100%;
 	@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 		grid-template-columns: 90vh;
 		grid-gap: 2rem;
@@ -143,23 +144,28 @@ const UserComponentStyles = styled.div`
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
+		gap: 2vh;
 		margin-top: 1vh;
-		margin-left: 10rem;
+		margin-left: 8rem;
 		@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 			display: grid;
 			grid-template-columns: 1fr 4.5fr;
 			grid-template-rows: 1fr auto;
-			grid-column-gap: 0px;
-			grid-row-gap: 0px;
-			margin-left: 2rem;
+			grid-column-gap: 2vh;
+			grid-row-gap: 0;
+			margin-left: 1rem;
 		}
 		@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
-			display: grid;
-			grid-template-rows: 1fr 2fr;
-			grid-column-gap: 0px;
-			grid-row-gap: 0px;
+			display:flex;
+			flex-direction: column;
+			justify-content: space-evenly;
 			margin-left: 2rem;
+		}
+		@media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
+			display:flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			margin-left: 6rem;
 		}
 		&__pic {
 			width: 15rem;
@@ -173,6 +179,9 @@ const UserComponentStyles = styled.div`
 			}
 			@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
 				grid-area: 1 / 1 / 2 / 2;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				width: 8rem;
 				height: 8rem;
 			}
@@ -185,6 +194,7 @@ const UserComponentStyles = styled.div`
 			border: 2px solid #218bff;
 			border-radius: 1rem;
 			background-color: #fff57e;
+			min-width: 25vh;
 			@media (${breakpoints.min}px <= width <= ${breakpoints.mobileMax}px) {
 				grid-area: 1 / 2 / 2 / 3;
 				width: 25vh;
@@ -193,8 +203,7 @@ const UserComponentStyles = styled.div`
 				margin-left: -4vh;
 			}
 			@media (${breakpoints.mobileMax}px <= width <= ${breakpoints.tabletMax}px) {
-				width: 45vh;
-				max-width: 40vh;
+				width: 30vh;
 				max-height: 30vh;
 				gap: 0;
 				margin-left: 2vh;

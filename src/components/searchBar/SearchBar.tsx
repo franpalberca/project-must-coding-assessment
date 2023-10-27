@@ -19,6 +19,7 @@ const SearchBar = (props: PropType) => {
                 placeholder="Filter repositories"
                 value={filter}
                 onChange={handleSearch}
+                data-testid="search-input"
             />
         </SearchBarStyles>
     );

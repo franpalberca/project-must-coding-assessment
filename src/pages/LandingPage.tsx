@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import {FiGithub} from 'react-icons/fi';
-import { breakpoints } from '../styles/breakpoints';
+import {breakpoints} from '../styles/breakpoints';
 
 interface LandingPageProps {
 	onFormSubmit: (userName: string) => void; // Specifies type on onFormSubmit prop

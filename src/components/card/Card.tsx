@@ -42,7 +42,7 @@ const CardStyles = styled.div`
 		}
         @media (${breakpoints.tabletMax}px <= width <= ${breakpoints.laptopMax}px) {
             margin-right: 3rem;
-            width: 95vh;
+            width: 65vh;
             height: 10vh;
             gap: 0;
         }
