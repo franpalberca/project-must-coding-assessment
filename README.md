@@ -34,19 +34,22 @@ This GitHub User Search App is designed to be responsive, ensuring an optimal us
 
 ### Desktop View
 
-![Desktop View](/public/img/landing_laptop.png) (/public/img/main_laptop.png)
+![Desktop Landing Page View](/public/img/landing_laptop.png) 
+![Desktop Repositories Page View](/public/img/main_laptop.png)
 
 The desktop view offers a spacious layout with easy navigation and clear user interface elements.
 
 ### Tablet View
 
-![Tablet View](/public/img/Landing_Ipad.png) (/public/img/main_tablet.png)
+![Tablet Landing Page View](/public/img/Landing_Ipad.png) 
+![Tablet Repositories Page View](/public/img/main_tablet.png)
 
 The tablet view maintains the app's usability while optimizing the content for smaller screens.
 
 ### Mobile View
 
-![Mobile View](/public/img/Landing_phone.png) (/public/img/main_phone.png)
+![Mobile Landing Page View](/public/img/Landing_phone.png) 
+![Mobile Repositories Page View](/public/img/main_phone.png)
 
 On mobile devices, the app's design adjusts to fit the smaller screen while retaining its core functionality.
 
