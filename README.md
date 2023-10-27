@@ -5,7 +5,6 @@ In this App you will be able to search for an user's repositories and filter the
 
 ## Table of Contents
 
-- [Demo](#demo)
 - [Features](#features)
 - [Responsive Design](#responsive-design)
 - [Getting Started](#getting-started)
@@ -15,10 +14,6 @@ In this App you will be able to search for an user's repositories and filter the
 - [Future Implementation](#future-implementing)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Demo
-
-You can check out a live demo of this GitHub User Search App [here](#).
 
 ## Features
 
