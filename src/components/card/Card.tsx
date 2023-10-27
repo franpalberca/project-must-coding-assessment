@@ -9,7 +9,7 @@ type Props = {
 const Card = (props: Props) => {
 	const {name, url} = props;
 	return (
-		<CardStyles>
+		<CardStyles data-testid='card'>
 			<div key={name} className="card__box">
 				<h3 className='card__box__title'>{name}</h3>
 				<a className='card__box__url' href={url} target="_blank">
