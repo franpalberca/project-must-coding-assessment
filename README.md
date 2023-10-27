@@ -1,6 +1,7 @@
 # GitHub User Search App
 
-A simple web application built with Vite, React, and TypeScript to search for GitHub users and view their repositories.
+A simple web application built with Vite, React, and TypeScript to search for GitHub users and view their repositories. 
+In this App you will be able to search for an user's repositories and filter them afterwards.
 
 ## Table of Contents
 
@@ -11,7 +12,6 @@ A simple web application built with Vite, React, and TypeScript to search for Gi
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
 - [Testing](#testing)
-- [Storybook](#storybook)
 - [Future Implementation](#future-implementing)
 - [Contributing](#contributing)
 - [License](#license)
@@ -106,12 +106,8 @@ stories/: Contains Storybook stories for components.
 The GitHub User Search App is equipped with unit tests to ensure code quality and functionality. Run the following command to execute the tests:
 npm run test
 
-## Storybook
-Storybook is integrated to visualize and interact with components in isolation. Run the following command to start Storybook:
-npm run storybook
-
 ## Future Implementation
-The next natural step for this project is to implement the option to view repositories within the app itself. Also to be able to see the projects of each user. Finally, a future implementation would also be the option to create, modify and delete repositories.
+The next natural step for this project is to implement the option to view repositories within the app itself. Also to be able to see the projects of each user. Finally, a future implementation would also be the option to create, modify and delete repositories and create storybook for the project.
 In short, the GraphQl query needs to be augmented to bring more information, perform CRUD and be able to add more extras.
 
 ## Contributing
